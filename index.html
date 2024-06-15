@@ -17,7 +17,7 @@
             display: flex; flex-direction: column;
             justify-content: center; align-items: center;
             height: 100%; margin-right: auto;
-            width: 200px; margin-left: auto;
+            width: 300px; margin-left: auto;
         }
         .calculate{
             color: white; font-variant: small-caps;
@@ -36,19 +36,13 @@
             height: 30px; width: 100px;
             font-size: 15px; text-align: center;
             margin-bottom: 20px; outline: none;
+            box-shadow: 1px 1px 5px ghostwhite;
+            border-radius: 10px;
+            box-shadow: -1px 1px 5px rgba(254, 253, 254, 0.582);
         }
-        @media (max-width: 800px) {
-            label{
-            font-size: 25px; font-variant: small-caps;
-        }
-            input[type = "number"] {
-            height: 40px; width: 140px;
-            font-size: 15px;
-        } 
-        }
-        input[type= "button"] {
-            height: 28px; width: 80px; border-radius: 30px;
-            background-color: blue; border: none;
+    input[type= "button"] {
+        height: 28px; width: 80px; border-radius: 30px;
+        background-color: blue; border: none;
             outline: none; color: white; font-weight: 600;
             font-size: 15px; cursor: pointer;
         }
@@ -56,29 +50,54 @@
             background-color: rgb(96, 44, 44);
         }
         input[type= "button"]:first-child {
-            background-color: red;
+            background-color: red; margin-right: 15px;
         }
         input[type= "button"]:first-child:hover {
             background-color: rgb(51, 51, 81);
         }
         .powered{
-            color: white; position: absolute; bottom: 20px;
+            color: white; position: absolute; bottom: 10px;
             left: 20px;
         }
         .incomebox{
             color: white; position: relative; top: 50px;
-            display: flex; align-items: center;
+            display: flex; align-items: center; justify-content: center;
         }
         .incomebox p:first-child{
             margin-right: 10px; 
         }
         .incomebox p:last-child{
-            font-size: 20px; font-variant: small-caps;
+            font-size: 25px; font-variant: small-caps;
             font-family: 'Courier New', Courier, monospace;
+            font-weight: 600; color: bisque;
         }
-        .incomebox p:last-child >hr{
-            width: 20px; height: 20px; text-align: center;
+        @media (max-width: 800px) {
+
+        .incomebox p:first-child{
+            margin-right: 10px; 
         }
+        .incomebox p:last-child{
+            font-size: 30px;
+        }
+        label{
+            font-size: 25px; font-variant: small-caps;
+        }
+        input[type = "number"] {
+            height: 40px; width: 140px;
+            font-size: 15px;
+        } 
+        .powered{
+            color: white; position: absolute; bottom: 5px;
+            left: 20px;
+        }
+        input[type= "button"] {
+            height: 38px; width: 100px;
+            background-color: blue;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+    }
     </style>
 </head>
 <body>
