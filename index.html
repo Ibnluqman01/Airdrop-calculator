@@ -10,7 +10,7 @@
         }
         body{
             background-color: black;
-            height: 100svh; display: flex; justify-content: center;
+            height: 100vh; display: flex; justify-content: center;
             align-items: center; flex-direction: column;
         }
         .container{
@@ -40,7 +40,7 @@
             border-radius: 10px;
             box-shadow: -1px 1px 5px rgba(254, 253, 254, 0.582);
         }
-    input[type= "button"] {
+        input[type= "button"] {
         height: 28px; width: 80px; border-radius: 30px;
         background-color: blue; border: none;
             outline: none; color: white; font-weight: 600;
@@ -56,7 +56,6 @@
             background-color: rgb(51, 51, 81);
         }
         .powered{
-            color: white; position: absolute; bottom: 10px;
             left: 20px;
         }
         .incomebox{
@@ -70,6 +69,15 @@
             font-size: 25px; font-variant: small-caps;
             font-family: 'Courier New', Courier, monospace;
             font-weight: 600; color: bisque;
+        }
+        .incomeNaira{
+            font-size: 25px; font-variant: small-caps;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600; color: white;
+        }
+        .copyright, .powered{
+            color: white; display: inline;
+            color: white; position: absolute; bottom: 10px;
         }
         @media (max-width: 800px) {
 
@@ -104,7 +112,8 @@
     <p class="calculate">Calculate your <b>Airdrops</b> now</p>
     <div class="incomebox">
         <p style="font-size: 20px; font-weight: 600;">INCOME:</p>
-        <p id="incomeBal">-</p>
+        <p class="incomeNaira">&#8358</p>
+        <p id="incomeBal"></p>
     </div>
     <div class="container">
         <label for="">Coin balance</label>
@@ -122,6 +131,7 @@
         
     </div>
     <p class="powered"><i>Powered by:</i> <span>Ibnluqman</span></p>
+    <p class="copyright">&copy 2024</p>
 
     <script>
         function checkKey(){
@@ -136,9 +146,10 @@
 
             
             if (percentage >= 0.0001) {
-                let incomeBalance = document.getElementById("incomeBal").innerHTML = (coinBalance * dollar * currency * percentage) / 100;
+                let incomeBalance = document.getElementById("incomeBal").innerHTML = ( (coinBalance * dollar * currency * percentage) / 100).toLocaleString();
+                incomeBalance = parseInt(incomeBalance);
             } else {
-                let incomeBalance = document.getElementById("incomeBal").innerHTML = (coinBalance * dollar * currency);
+                let incomeBalance = document.getElementById("incomeBal").innerHTML = (coinBalance * dollar * currency).toLocaleString();
             }
         }
 
@@ -148,7 +159,7 @@
             let currency = document.getElementsByClassName("naira")[0].value = "";
             let percentage = document.getElementsByClassName("pcent")[0].value = "";
 
-            document.getElementById("incomeBal").innerHTML = "-";
+            document.getElementById("incomeBal").innerHTML = "";
         }
     </script>
 </body>
